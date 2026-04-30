@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HorseShowCalendar.com — Every Horse Show in One Place</title>
+  <meta name="description" content="Search and browse horse shows by discipline, region, and month. Hunter/Jumper, Dressage, Eventing, Western, Reining, Barrel Racing, and more. Part of the Schneider Saddlery Equine Network.">
+  <meta name="keywords" content="horse shows, equestrian events, hunter jumper, dressage, eventing, western, reining, barrel racing, horse show calendar, USEF, AQHA, USDF">
+  <meta property="og:title" content="HorseShowCalendar.com — Every Horse Show in One Place">
+  <meta property="og:description" content="Search and browse horse shows by discipline, region, and month. Aggregated horse show schedule for every discipline.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.horseshowcalendar.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://www.horseshowcalendar.com">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+  <!-- ======== Network Bar ======== -->
+  <div class="network-bar">
+    Part of the Schneider Saddlery Equine Network &mdash; Shop <a href="https://www.sstack.com" target="_blank" rel="noopener">sstack.com</a>
+  </div>
+
+  <!-- ======== Header ======== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon" aria-hidden="true">&#128197;</div>
+        <div class="logo-text">
+          HorseShowCalendar
+          <span>by Schneider Saddlery</span>
+        </div>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="active">Shows</a></li>
+          <li><a href="#submit">Submit a Show</a></li>
+          <li><a href="#alerts">Show Alerts</a></li>
+          <li><a href="for-managers.html">For Managers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="login.html" id="navAccount">Log In</a></li>
+          <li><a href="login.html?tab=signup&amp;role=manager" class="nav-cta">Run a Show</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======== Hero ======== -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Every Horse Show in <em>One Place</em></h1>
+        <p>Search upcoming horse shows across every discipline and region. From local schooling shows to national championships, your complete equestrian event guide.</p>
+        <div class="hero-ctas">
+          <a href="#filters" class="btn-hero-primary">&#128269; Browse Shows</a>
+          <a href="#submit" class="btn-hero-secondary">&#43; Submit a Show</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>24+</strong>
+            <span>Listed Shows</span>
+          </div>
+          <div class="hero-stat">
+            <strong>10</strong>
+            <span>Disciplines</span>
+          </div>
+          <div class="hero-stat">
+            <strong>6</strong>
+            <span>Regions</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mini Calendar Visual -->
+      <div class="hero-calendar">
+        <div class="hero-calendar-header">
+          <h3>February 2026</h3>
+          <div class="cal-nav">
+            <span>&#8249;</span>
+            <span>&#8250;</span>
+          </div>
+        </div>
+        <div class="hero-calendar-grid">
+          <div class="cal-weekdays">
+            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+          </div>
+          <div class="cal-days">
+            <div class="cal-day">1</div>
+            <div class="cal-day">2</div>
+            <div class="cal-day today">3</div>
+            <div class="cal-day">4</div>
+            <div class="cal-day">5</div>
+            <div class="cal-day">6</div>
+            <div class="cal-day">7</div>
+            <div class="cal-day">8</div>
+            <div class="cal-day">9</div>
+            <div class="cal-day">10</div>
+            <div class="cal-day">11</div>
+            <div class="cal-day">12</div>
+            <div class="cal-day">13</div>
+            <div class="cal-day">14</div>
+            <div class="cal-day">15</div>
+            <div class="cal-day">16</div>
+            <div class="cal-day">17</div>
+            <div class="cal-day has-event multi">18</div>
+            <div class="cal-day has-event multi">19</div>
+            <div class="cal-day has-event multi">20</div>
+            <div class="cal-day has-event multi">21</div>
+            <div class="cal-day has-event">22</div>
+            <div class="cal-day">23</div>
+            <div class="cal-day">24</div>
+            <div class="cal-day">25</div>
+            <div class="cal-day has-event multi">26</div>
+            <div class="cal-day has-event multi">27</div>
+            <div class="cal-day has-event">28</div>
+          </div>
+        </div>
+        <div class="hero-calendar-footer">
+          <div class="cal-event-preview">
+            <span class="cal-event-dot" style="background:#166534;"></span>
+            <span><strong>Feb 18-22</strong> Gulf Coast Classic</span>
+          </div>
+          <div class="cal-event-preview">
+            <span class="cal-event-dot" style="background:#065F46;"></span>
+            <span><strong>Feb 26</strong> Scottsdale Arabian</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Filter Bar ======== -->
+  <section class="filter-section" id="filters">
+    <div class="container">
+      <div class="filter-bar">
+        <div class="filter-group">
+          <label for="filterDiscipline">Discipline</label>
+          <select id="filterDiscipline">
+            <option value="All">All Disciplines</option>
+            <option value="Hunter/Jumper">Hunter/Jumper</option>
+            <option value="Dressage">Dressage</option>
+            <option value="Eventing">Eventing</option>
+            <option value="Western">Western</option>
+            <option value="Reining">Reining</option>
+            <option value="Barrel Racing">Barrel Racing</option>
+            <option value="Breed Shows">Breed Shows</option>
+            <option value="Polo">Polo</option>
+            <option value="Driving">Driving</option>
+            <option value="Combined Test">Combined Test</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filterRegion">Region</label>
+          <select id="filterRegion">
+            <option value="All">All Regions</option>
+            <option value="Northeast">Northeast</option>
+            <option value="Southeast">Southeast</option>
+            <option value="Midwest">Midwest</option>
+            <option value="Southwest">Southwest</option>
+            <option value="West">West</option>
+            <option value="Northwest">Northwest</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filterMonth">Month</label>
+          <select id="filterMonth">
+            <option value="all">All Months</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filterSearch">Search</label>
+          <input type="text" id="filterSearch" placeholder="Search shows, cities...">
+        </div>
+        <div class="filter-actions">
+          <button class="btn-filter" id="btnFilter" type="button">Search Shows</button>
+          <button class="btn-reset" id="btnReset" type="button">Reset</button>
+        </div>
+      </div>
+
+      <!-- Discipline Chips -->
+      <div class="filter-chips">
+        <span class="filter-chip"><span class="chip-dot" style="background:#166534;"></span> Hunter/Jumper</span>
+        <span class="filter-chip"><span class="chip-dot" style="background:#1E40AF;"></span> Dressage</span>
+        <span class="filter-chip"><span class="chip-dot" style="background:#B45309;"></span> Eventing</span>
+        <span class="filter-chip"><span class="chip-dot" style="background:#92400E;"></span> Western</span>
+        <span class="filter-chip"><span class="chip-dot" style="background:#BE185D;"></span> Reining</span>
+        <span class="filter-chip"><span class="chip-dot" style="background:#7C3AED;"></span> Barrel Racing</span>
+        <span class="filter-chip"><span class="chip-dot" style="background:#065F46;"></span> Breed Shows</span>
+        <span class="filter-chip"><span class="chip-dot" style="background:#3730A3;"></span> Polo</span>
+        <span class="filter-chip"><span class="chip-dot" style="background:#A16207;"></span> Driving</span>
+        <span class="filter-chip"><span class="chip-dot" style="background:#BE123C;"></span> Combined Test</span>
+      </div>
+
+      <div class="results-info" id="resultsInfo">
+        Showing all <strong>24</strong> upcoming shows
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Show Listings ======== -->
+  <section class="shows-section" id="shows">
+    <div class="container">
+      <div class="section-header">
+        <h2>Upcoming Horse Shows</h2>
+        <div class="view-toggles">
+          <button id="viewGrid" class="active" title="Grid view" aria-label="Grid view">&#9638;&#9638;</button>
+          <button id="viewList" title="List view" aria-label="List view">&#9776;</button>
+        </div>
+      </div>
+      <div class="shows-grid" id="showsGrid">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Submit a Show ======== -->
+  <section class="submit-section" id="submit">
+    <div class="container">
+      <h2>Submit a Show</h2>
+      <p class="subtitle">Are you a show organizer? List your event on HorseShowCalendar.com for free.</p>
+
+      <form class="submit-form" id="submitShowForm" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="ssName">Show Name *</label>
+            <input type="text" id="ssName" required placeholder="e.g., Bluegrass Classic">
+          </div>
+          <div class="form-field">
+            <label for="ssDiscipline">Discipline *</label>
+            <select id="ssDiscipline" required>
+              <option value="">Select discipline...</option>
+              <option value="Hunter/Jumper">Hunter/Jumper</option>
+              <option value="Dressage">Dressage</option>
+              <option value="Eventing">Eventing</option>
+              <option value="Western">Western</option>
+              <option value="Reining">Reining</option>
+              <option value="Barrel Racing">Barrel Racing</option>
+              <option value="Breed Shows">Breed Shows</option>
+              <option value="Polo">Polo</option>
+              <option value="Driving">Driving</option>
+              <option value="Combined Test">Combined Test</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="ssDateStart">Start Date *</label>
+            <input type="date" id="ssDateStart" required>
+          </div>
+          <div class="form-field">
+            <label for="ssDateEnd">End Date</label>
+            <input type="date" id="ssDateEnd">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="ssCity">City *</label>
+            <input type="text" id="ssCity" required placeholder="City">
+          </div>
+          <div class="form-field">
+            <label for="ssState">State *</label>
+            <input type="text" id="ssState" required placeholder="State" maxlength="2">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="ssEmail">Contact Email *</label>
+            <input type="email" id="ssEmail" required placeholder="organizer@example.com">
+            <span class="field-hint">We will contact you to verify the listing.</span>
+          </div>
+          <div class="form-field">
+            <label for="ssWebsite">Show Website</label>
+            <input type="url" id="ssWebsite" placeholder="https://www.yourshow.com">
+          </div>
+        </div>
+        <div class="form-row full">
+          <div class="form-field">
+            <label for="ssDescription">Description</label>
+            <textarea id="ssDescription" placeholder="Tell us about your show — classes offered, levels, special features..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn-submit">Submit Show for Review</button>
+      </form>
+
+      <div class="form-success" id="submitSuccess">
+        <h3>Show Submitted Successfully!</h3>
+        <p>Thank you for submitting your show. Our team will review it and add it to the calendar within 2-3 business days. You will receive a confirmation email.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Weekly Show Alerts ======== -->
+  <section class="alerts-section" id="alerts">
+    <div class="container">
+      <h2>Get Weekly Show Alerts</h2>
+      <p class="subtitle">Never miss a show in your area. Receive a curated list of upcoming events every week.</p>
+
+      <form class="alerts-form" id="alertSignupForm" novalidate>
+        <label for="alertName">Your Name *</label>
+        <input type="text" id="alertName" required placeholder="Full name">
+
+        <label for="alertEmail">Email Address *</label>
+        <input type="email" id="alertEmail" required placeholder="you@example.com">
+
+        <label>Disciplines of Interest</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="alertDisciplines" value="Hunter/Jumper"> Hunter/Jumper</label>
+          <label><input type="checkbox" name="alertDisciplines" value="Dressage"> Dressage</label>
+          <label><input type="checkbox" name="alertDisciplines" value="Eventing"> Eventing</label>
+          <label><input type="checkbox" name="alertDisciplines" value="Western"> Western</label>
+          <label><input type="checkbox" name="alertDisciplines" value="Reining"> Reining</label>
+          <label><input type="checkbox" name="alertDisciplines" value="Barrel Racing"> Barrel Racing</label>
+          <label><input type="checkbox" name="alertDisciplines" value="Breed Shows"> Breed Shows</label>
+          <label><input type="checkbox" name="alertDisciplines" value="Polo"> Polo</label>
+          <label><input type="checkbox" name="alertDisciplines" value="Driving"> Driving</label>
+          <label><input type="checkbox" name="alertDisciplines" value="Combined Test"> Combined Test</label>
+        </div>
+
+        <label for="alertRegion">Preferred Region</label>
+        <select id="alertRegion">
+          <option value="All">All Regions</option>
+          <option value="Northeast">Northeast</option>
+          <option value="Southeast">Southeast</option>
+          <option value="Midwest">Midwest</option>
+          <option value="Southwest">Southwest</option>
+          <option value="West">West</option>
+          <option value="Northwest">Northwest</option>
+        </select>
+
+        <label for="alertDistance">Max Distance Willing to Travel</label>
+        <select id="alertDistance">
+          <option value="50">Within 50 miles</option>
+          <option value="100" selected>Within 100 miles</option>
+          <option value="200">Within 200 miles</option>
+          <option value="500">Within 500 miles</option>
+          <option value="any">Any distance / nationwide</option>
+        </select>
+
+        <button type="submit" class="btn-alert-signup">Sign Up for Weekly Alerts</button>
+      </form>
+
+      <div class="alert-success" id="alertSuccess">
+        <h3>You're Signed Up!</h3>
+        <p>Check your inbox for a confirmation email. Your first weekly show alert will arrive soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== How It Works ======== -->
+  <section class="how-section" id="how">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="how-grid">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <h3>Search &amp; Filter</h3>
+          <p>Browse shows by discipline, region, or month. Use the search bar to find specific events, venues, or organizations.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <h3>Get the Details</h3>
+          <p>View entry fees, stabling availability, prize money, judges, and more. Click any show card to expand its full details.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <h3>Stay Informed</h3>
+          <p>Sign up for weekly alerts customized to your disciplines and region. We'll email you new shows as they're added to the calendar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FAQ ======== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How do I list my horse show on HorseShowCalendar.com?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Use the "Submit a Show" form above to send us your show information. Include the show name, dates, location, discipline, and your contact email. Our team reviews submissions within 2-3 business days and will add your show to the calendar. Listing is completely free for show organizers.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Is HorseShowCalendar.com affiliated with USEF, AQHA, or other organizations?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>HorseShowCalendar.com is an independent aggregator and is not officially affiliated with USEF, AQHA, USDF, USEA, NRHA, or any other governing body. We compile show information from public sources and organizer submissions to provide a comprehensive calendar. Always verify details directly with the show organizer or sanctioning body.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How often is the show calendar updated?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We update the calendar weekly with new shows and any changes to existing listings. Show organizers can submit updates at any time through our submission form. If you notice an error or a show that has been cancelled, please contact us so we can update the listing promptly.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I enter a show directly through this website?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>HorseShowCalendar.com is a directory and does not process show entries. Each show listing includes a link to the show's official website where you can find entry forms, prize lists, and registration information. We recommend contacting the show secretary directly for entry questions.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What does the weekly alert email include?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Our weekly alert email includes a curated list of upcoming shows that match your selected disciplines and region. You'll see show names, dates, locations, and direct links to details. Alerts are sent every Monday morning, and you can unsubscribe or update your preferences at any time.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Footer ======== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon" aria-hidden="true">&#128197;</div>
+            <div class="logo-text" style="color:#fff;">
+              HorseShowCalendar
+              <span style="color:rgba(255,255,255,.5);">by Schneider Saddlery</span>
+            </div>
+          </a>
+          <p>The most comprehensive horse show calendar on the web. Search by discipline, region, and month to find your next competition.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Show Calendar</a>
+          <a href="#submit">Submit a Show</a>
+          <a href="#alerts">Weekly Alerts</a>
+          <a href="about.html">About Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Disciplines</h4>
+          <a href="#" onclick="return false;">Hunter/Jumper</a>
+          <a href="#" onclick="return false;">Dressage</a>
+          <a href="#" onclick="return false;">Eventing</a>
+          <a href="#" onclick="return false;">Western</a>
+          <a href="#" onclick="return false;">Reining</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+          <a href="about.html#contact">Contact Us</a>
+          <a href="https://www.sstack.com" target="_blank" rel="noopener">sstack.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 HorseShowCalendar.com. All rights reserved.</span>
+        <span>Powered by Schneider Saddlery | <a href="https://www.sstack.com" target="_blank" rel="noopener">sstack.com</a></span>
+      </div>
+    </div>
+    <div class="footer-tagline">
+      Horses Define Who We Are&trade;
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" aria-label="Scroll to top">&#8593;</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/main-live.js"></script>
+</body>
+</html>

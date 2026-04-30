@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Show Details — HorseShowCalendar.com</title>
+  <meta name="description" id="pageDesc" content="Horse show details, prize list, schedule, entries, and live results on HorseShowCalendar.com.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+  <div class="network-bar">
+    Part of the Schneider Saddlery Equine Network &mdash; Shop <a href="https://www.sstack.com" target="_blank" rel="noopener">sstack.com</a>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">&#128197;</div>
+        <div class="logo-text">HorseShowCalendar<span>by Schneider Saddlery</span></div>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Browse Shows</a></li>
+          <li><a href="for-managers.html">For Managers</a></li>
+          <li><a href="login.html" id="navAccount">Log In</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="show-hero">
+    <div class="container" id="showHero">
+      <p style="opacity:.7;">Loading…</p>
+    </div>
+  </section>
+
+  <div class="show-tabs">
+    <div class="container">
+      <div class="show-tabs-inner" id="showTabs">
+        <button class="show-tab active" data-tab="overview">Overview</button>
+        <button class="show-tab" data-tab="prize-list">Prize List</button>
+        <button class="show-tab" data-tab="schedule">Schedule</button>
+        <button class="show-tab" data-tab="results">Live Results</button>
+        <button class="show-tab" data-tab="announcements">Announcements</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="tab-panel active" id="panel-overview">
+      <div class="card-grid">
+        <div class="card" id="overviewLeft"></div>
+        <div class="card" id="overviewRight"></div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="panel-prize-list">
+      <div id="prizeListContent"></div>
+    </section>
+
+    <section class="tab-panel" id="panel-schedule">
+      <div id="scheduleContent"></div>
+    </section>
+
+    <section class="tab-panel" id="panel-results">
+      <div id="resultsContent"></div>
+    </section>
+
+    <section class="tab-panel" id="panel-announcements">
+      <div id="announcementsContent"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 HorseShowCalendar.com — Part of the Schneider Saddlery Equine Network</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/show.js"></script>
+</body>
+</html>

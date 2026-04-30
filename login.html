@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In — HorseShowCalendar.com</title>
+  <meta name="description" content="Log in to manage your shows or your entries on HorseShowCalendar.com.">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="auth-page">
+
+  <div class="network-bar">
+    Part of the Schneider Saddlery Equine Network &mdash; Shop <a href="https://www.sstack.com" target="_blank" rel="noopener">sstack.com</a>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">&#128197;</div>
+        <div class="logo-text">HorseShowCalendar<span>by Schneider Saddlery</span></div>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Browse Shows</a></li>
+          <li><a href="for-managers.html">For Managers</a></li>
+          <li><a href="login.html?tab=signup&role=manager" class="nav-cta">Run a Show</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-card">
+      <div class="auth-tabs" id="authTabs">
+        <button class="auth-tab active" data-tab="login" type="button">Log In</button>
+        <button class="auth-tab" data-tab="signup" type="button">Sign Up</button>
+      </div>
+
+      <div class="auth-body" id="authBody">
+        <form id="loginForm" class="auth-form active" novalidate>
+          <h1 class="auth-title">Welcome back</h1>
+          <p class="auth-sub">Show managers, exhibitors, and judges — all on one login.</p>
+
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" required autocomplete="email">
+
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" required autocomplete="current-password">
+
+          <button type="submit" id="loginBtn" class="btn-primary-block">Log In</button>
+          <button type="button" id="magicLinkBtn" class="btn-secondary-block">Send a magic link</button>
+
+          <div class="auth-extra-row">
+            <a href="#" id="forgotLink">Forgot password?</a>
+          </div>
+
+          <div class="auth-error" id="authError" role="alert"></div>
+          <div class="auth-success" id="authSuccess" role="status"></div>
+        </form>
+
+        <form id="signupForm" class="auth-form" novalidate>
+          <h1 class="auth-title">Create your account</h1>
+          <p class="auth-sub">Free to sign up. Free for exhibitors. Show managers pay a small per-entry fee — no annual contracts.</p>
+
+          <label for="signupRole">I am a</label>
+          <select id="signupRole" required>
+            <option value="exhibitor">Rider / Exhibitor / Trainer</option>
+            <option value="manager">Show Manager / Organizer</option>
+            <option value="judge">Judge</option>
+          </select>
+
+          <label for="signupName">Full name</label>
+          <input type="text" id="signupName" required autocomplete="name">
+
+          <label for="signupEmail">Email</label>
+          <input type="email" id="signupEmail" required autocomplete="email">
+
+          <label for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" required minlength="6" autocomplete="new-password">
+
+          <label for="signupConfirm">Confirm password</label>
+          <input type="password" id="signupConfirm" required minlength="6" autocomplete="new-password">
+
+          <button type="submit" id="signupBtn" class="btn-primary-block">Create Account</button>
+
+          <p class="auth-fineprint">By creating an account you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+        </form>
+      </div>
+
+      <div class="auth-forgot" id="forgotPanel">
+        <h2>Reset your password</h2>
+        <p>Enter your email and we'll send you a reset link.</p>
+        <form id="forgotForm" novalidate>
+          <label for="forgotEmail">Email</label>
+          <input type="email" id="forgotEmail" required>
+          <button type="submit" class="btn-primary-block">Send reset link</button>
+          <button type="button" id="backToLogin" class="btn-secondary-block">Back to login</button>
+          <div class="auth-error" id="forgotError"></div>
+          <div class="auth-success" id="forgotSuccess"></div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 HorseShowCalendar.com — Part of the Schneider Saddlery Equine Network</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

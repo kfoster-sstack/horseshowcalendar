@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account — HorseShowCalendar.com</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="app-side">
+      <div class="app-side-logo"><a href="../index.html">&#128197; HorseShowCalendar</a><div class="role-tag">Exhibitor</div></div>
+      <nav class="app-side-nav">
+        <h4>Account</h4>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="schedule.html">My Schedule</a>
+        <a href="billing.html">Billing</a>
+        <a href="horses.html">My Horses</a>
+        <h4>Browse</h4>
+        <a href="../index.html">Show Calendar</a>
+      </nav>
+      <div class="app-side-foot">
+        <div id="userName" style="font-size:.85rem;color:rgba(255,255,255,.65);margin-bottom:6px;"></div>
+        <button id="logoutBtn">Log out</button>
+      </div>
+    </aside>
+
+    <main class="app-main">
+      <div class="app-topbar"><h1>Dashboard</h1><a href="../index.html" class="btn btn-primary">Browse Shows</a></div>
+
+      <div class="stat-grid" id="statGrid"></div>
+
+      <div class="section-h"><h2>My entries</h2></div>
+      <div id="entriesList"></div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="../js/shared.js"></script>
+  <script>window.PAGE = 'dashboard';</script>
+  <script src="../js/exhibitor.js"></script>
+</body>
+</html>

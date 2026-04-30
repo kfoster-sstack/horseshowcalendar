@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Judge Console — HorseShowCalendar.com</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="app-side">
+      <div class="app-side-logo"><a href="../index.html">&#128197; HorseShowCalendar</a><div class="role-tag">Judge</div></div>
+      <nav class="app-side-nav">
+        <h4>Scoring</h4>
+        <a href="judge.html" class="active">Score Classes</a>
+      </nav>
+      <div class="app-side-foot">
+        <div id="userName" style="font-size:.85rem;color:rgba(255,255,255,.65);margin-bottom:6px;"></div>
+        <button id="logoutBtn">Log out</button>
+      </div>
+    </aside>
+
+    <main class="app-main">
+      <div class="app-topbar"><h1>Judge Console</h1></div>
+      <div class="card">
+        <label style="font-weight:600;">Show:</label>
+        <select id="judgeShowPicker" style="padding:8px;border:1px solid var(--border);border-radius:6px;margin-left:10px;min-width:300px;">
+          <option value="">Loading…</option>
+        </select>
+      </div>
+      <div id="judgeRoot"></div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="../js/shared.js"></script>
+  <script>window.PAGE = 'judge';</script>
+  <script src="../js/scoring.js"></script>
+</body>
+</html>

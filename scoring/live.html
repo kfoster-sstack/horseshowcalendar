@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Results — HorseShowCalendar.com</title>
+  <meta name="description" content="Live horse show results board.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+  <div class="live-board">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:18px;">
+      <h1 id="liveTitle">Live Results</h1>
+      <a href="../index.html" style="color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;">← Calendar</a>
+    </div>
+    <div id="liveBody"><p style="opacity:.7;">Loading…</p></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="../js/shared.js"></script>
+  <script>window.PAGE = 'live';</script>
+  <script src="../js/scoring.js"></script>
+</body>
+</html>
